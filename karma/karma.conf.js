@@ -14,13 +14,11 @@ module.exports = function(config) {
 
 
     // list of files / patterns to load in the browser
-    files: [
-    ],
+    files: ['*.js'],
 
 
     // list of files to exclude
-    exclude: [
-    ],
+    exclude: ['karma.conf.js'],
 
 
     // preprocess matching files before serving them to the browser
