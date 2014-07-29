@@ -4,3 +4,7 @@
 function reverse(name){
   return name.split("").reverse().join("");
 }
+
+function summary(a, b){
+  return a + b
+}
