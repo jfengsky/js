@@ -167,8 +167,124 @@ jQuery.extend({
   },
   ready: function( fn ) {
     jQuery.ready.promise().done( fn )
+  },
+  isFunction: function( obj ){
+    return jQuery.type(obj) === 'function'
+  },
+  isArray: Array.isArray,
+  isWindow: function( obj ){
+    return obj != null && obj === obj.window;
+  },
+  isNumeric: function( obj ){
+    return !isNaN( parseFloat(obj) ) && isFinite( obj );
+  },
+  type: function( obj ){
+    if ( obj == null) {
+      return String( obj )
+    }
+    return typeof obj === 'object' || typeof obj === 'function' ?
+      class2type[ core_toString.call( obj )] || 'object' :
+      typeof obj
+  },
+  isPlainObject: function(){
+    if ( jQuery.type( obj ) !== 'object' || obj.nodeType || jQuery.isWindow( obj ) ) {
+      return false
+    }
+
+    try {
+      if ( obj.constructor && !core_hasOwn.call( obj.constructor.prototype, 'ksPrototypeOf') ) {
+        return false
+      }
+    } catch ( e ) {
+
+    }
+  },
+  isEmptyObject: function(){
+    var name;
+    for (name in obj) {
+      return false
+    }
+    return true
+  },
+  error: function( msg ){
+    throw new Error( msg )
+  },
+  parseHTML: function(){
+
+  },
+  parseJSON: JSON.parse,
+  parseXML: function(){
+
+  },
+  globalEval: function( code ){
+
+  },
+  camelCase: function(){
+
+  },
+  nodeName: function( elem, name ){
+    return elem.nodeName && elem.nodeName.toLowerCase() === name.toLowerCase()
+  },
+  each: function( obj, callback, args ){
+    var value, i = 0,
+        length = obj.length,
+        isArray = isArraylike( obj );
+    if ( args ) {
+
+    } else {
+      if ( isArray ) {
+        for(; i < length; i++ ){
+          value = callback.call( obj[i], i, obj[i] );
+          if ( value === false ) {
+            break;
+          }
+        }
+      } else {
+        for ( i in obj) {
+          value = callback.call( obj[i], i, obj[i]);
+          if (value = false) {
+            break;
+          }
+        }
+      }
+    }
+  },
+  trim: function( text ){
+    return text == null ? '' : core_trim.call( text )
+  },
+  makeArray: function(){
+
+  },
+  inArray: function( elem, arr, i ) {
+
+  },
+  merge: function( first, second ){
+
+  },
+  grep: function( elems, callback, inv ){
+    var retVal,
+        ret = [],
+      i = 0,
+      length = elems.length;
+  }
+  guid: 1,
+  proxy: function(){
+
+  },
+  access: function(){
+
+  },
+  now: function(){
+
+  },
+  swap: function(){
+
   }
 });
+
+jQuery.callbacks = function( options ){
+
+}
 
 
 })( window );
