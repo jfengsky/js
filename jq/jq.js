@@ -266,7 +266,7 @@ jQuery.extend({
         ret = [],
       i = 0,
       length = elems.length;
-  }
+  },
   guid: 1,
   proxy: function(){
 
@@ -284,7 +284,14 @@ jQuery.extend({
 
 jQuery.callbacks = function( options ){
 
-}
+};
+
+jQuery.extend({
+  Deferred: function(){},
+  when: function(){
+
+  }
+});
 
 
 })( window );
