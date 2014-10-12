@@ -9,12 +9,22 @@ List = () ->
   @dataStore = []
 
   #清空列表中所有元素
-  #@clear = clear
+  @clear = () ->
+    delete @dataStore
+    @dataStore = []
+    @listSize = @pos = 0
+    return
 
   @toString = () ->
     this.dataStore
 
-  #@insert = insert
+  @insert = (element, after) ->
+    insertPos = @find after
+    if insertPos > -1
+      @dataStore.splice(insertPos + 1, 0, element)
+      ++@listSize
+      return true
+    false
 
   @append = (element) ->
     @dataStore[@listSize++] = element
@@ -27,25 +37,47 @@ List = () ->
       --this.listSize
       return true
     false
+  # 到最前面
+  @front = ()->
+    @pos = 0
+    return
 
-  #@front = front
+  # 到最后
+  @end = () ->
+    @pos = @listSize - 1
+    return
+  
+  # 向前移一位
+  @prev = () ->
+    if @pos > 0
+      --@pos
+    return
 
-  # @end = end
-
-  # @prev = prev
-
-  # @next = next
+  # 向后移动一位
+  @next = () ->
+    if @pos < @listSize - 1
+      ++@pos
+    return
 
   @length = () ->
     this.listSize
 
-  # @currPos = currPos
+  @currPos = () ->
+    @pos
 
-  # @moveTo = moveTo
+  # 移动到位置
+  @moveTo = (position) ->
+    @pos = position
 
-  # @getElement = getElement
+  @getElement = () ->
+    @dataStore[@pos]
 
-  # @contains = contains
+  # 判断元素是否在列表中
+  @contains = (element) ->
+    for i in [0..@dataStore.length]
+      if @dataStore[i] is element
+        return true
+    false
 
   @find = (element) ->
     for i in [0..@dataStore.length]
@@ -59,6 +91,13 @@ names = new List()
 names.append('jfeng')
 names.append('huifang')
 names.append('panpan')
+names.append('brain')
 console.log(names)
 console.log(names.length())
 console.log(names.toString())
+
+names.front()
+console.log(names.getElement())
+
+names.next()
+console.log(names.getElement())
