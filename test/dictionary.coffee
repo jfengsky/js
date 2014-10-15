@@ -5,4 +5,9 @@ Dictionary () ->
   @add = (key, value) ->
     @datastore[key] = value
     return
+
+  # 查找元素
+  @find = (key) ->
+    @datastore[key]
+  
   return
