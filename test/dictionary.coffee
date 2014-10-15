@@ -15,10 +15,19 @@ Dictionary = () ->
     return
 
   @showAll = () ->
-    for key in  Object.keys(@datastore)
+    for key in  Object.keys(@datastore).sort()
       console.log(key + "->" + @datastore[key])
     return
 
+  @count = () ->
+    n = 0
+    for key in Object.keys(@datastore)
+      ++n
+    n
+
+  @clear = () ->
+    for key in Object.keys(@datastore)
+      delete  @datastore[key]
   return
 
 pbook = new Dictionary()
@@ -29,5 +38,6 @@ pbook.add('cynthia', 567)
 pbook.showAll()
 
 pbook.remove('mike')
+pbook.clear()
 console.log('----')
 pbook.showAll()
