@@ -20,3 +20,11 @@ for (i in man) {
 for (i in man) {
   console.log(i, ":", man[i]);
 }
+
+(function() {
+  alert('watch out');
+})();
+
+(function() {
+  alert('watch out');
+})();

@@ -13,3 +13,13 @@ for i of man
 
 for i of man
   console.log(i, ":", man[i])
+
+
+(->
+  alert 'watch out'
+  return
+)()
+
+do ->
+  alert 'watch out'
+  return
