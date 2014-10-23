@@ -23,3 +23,12 @@ for i of man
 do ->
   alert 'watch out'
   return
+
+result = do ->
+  111
+
+myFunc = (param) ->
+  if !myFunc.cache[param]
+    result1 = {}
+    myFunc.cache[param] = result
+  myFunc.cache[param]
