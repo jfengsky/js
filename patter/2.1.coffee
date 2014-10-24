@@ -32,3 +32,5 @@ myFunc = (param) ->
     result1 = {}
     myFunc.cache[param] = result
   myFunc.cache[param]
+
+do ->
