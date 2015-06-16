@@ -6,7 +6,9 @@ lib-cov
 *.out
 *.pid
 *.gz
-
+.idea/
+node_modules/
+.DS_Store
 pids
 logs
 results
