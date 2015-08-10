@@ -4,53 +4,88 @@
   <meta charset="UTF-8">
   <title>scrollspy</title>
   <style>
+    body,ul,li{
+      padding:0;
+      margin: 0;
+    }
     #scrollspy li{
       height: 400px;
       width: 100%;
-      background-color: #ccc;
+      background-color: #333;
     }
     #scrollspy li.second{
-      background-color: #f60;
+      background-color: #555;
     }
     #scrollspy li.three{
-      background-color: #06f;
+      background-color: #777;
     }
     #scrollspy li.four{
-      background-color: #f00;
+      background-color: #999;
     }
     #scrollspy li.five{
-      background-color: #00f;
+      background-color: #aaa;
     }
     #scrollspy li.six{
-      background-color: #000;
+      background-color: #ccc;
+    }
+    .top{
+      position:fixed;
+      top: 0;
+      left: 0;
+      height: 40px;
+      background-color: #f60;
+      line-height: 40px;
+    }
+    .top li{
+      list-style: none;
+      float: left;
+      width: 30px;
+      text-align: center;
+      text-align: center;
+      color: #fff;
+    }
+    .top li.cur{
+      background-color: #06f;
     }
   </style>
   <script src="http://cdn.staticfile.org/jquery/1.9.1/jquery.js"></script>
 </head>
 <body>
+  <div id="J_top" class="top">
+    <ul>
+      <!-- <li class="cur">1</li> -->
+      <li data-tag="#spy1">1</li>
+      <li data-tag="#spy2">2</li>
+      <li data-tag="#spy3">3</li>
+      <li data-tag="#spy4">4</li>
+      <li data-tag="#spy5">5</li>
+      <li data-tag="#spy6">6</li>
+    </ul>
+  </div>
+  <div style="height: 400px"></div>
   <div id="scrollspy">
     <ul>
-      <li class="first">
+      <li class="first" id="spy1">
         <a href="#spy1">first</a>
       </li>
-      <li class="second">
+      <li class="second" id="spy2">
         <a href="#spy2">second</a>
       </li>
-      <li class="three">
+      <li class="three" id="spy3">
         <a href="#spy3">three</a>
       </li>
-      <li class="four">
+      <li class="four" id="spy4">
         <a href="#spy4">four</a>
       </li>
-      <li class="five">
+      <li class="five" id="spy5">
         <a href="#spy5">five</a>
       </li>
-      <li class="six">
+      <li class="six" id="spy6">
         <a href="#spy6">six</a>
       </li>
     </ul>
   </div>
-
+  <div style="height: 400px"></div>
   <script src="scrollspy.js"></script>
 </body>
 </html>
