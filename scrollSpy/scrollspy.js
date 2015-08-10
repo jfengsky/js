@@ -40,7 +40,7 @@
       }
     });
 
-    if( tempScrollTop <= idTopArray[0].top || tempScrollTop >= idTopArray[idTopArray.length - 1].top ){
+    if( tempScrollTop <= idTopArray[0].top + showRange.top || tempScrollTop >= idTopArray[idTopArray.length - 1].top + showRange.bottom){
       $('#J_top').find('li').removeClass('cur');
     }
 
