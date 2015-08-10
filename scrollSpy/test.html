@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>scrollspy</title>
+  <style>
+    #scrollspy li{
+      height: 400px;
+      width: 100%;
+      background-color: #ccc;
+    }
+    #scrollspy li.second{
+      background-color: #f60;
+    }
+    #scrollspy li.three{
+      background-color: #06f;
+    }
+    #scrollspy li.four{
+      background-color: #f00;
+    }
+    #scrollspy li.five{
+      background-color: #00f;
+    }
+    #scrollspy li.six{
+      background-color: #000;
+    }
+  </style>
+  <script src="http://cdn.staticfile.org/jquery/1.9.1/jquery.js"></script>
+</head>
+<body>
+  <div id="scrollspy">
+    <ul>
+      <li class="first">
+        <a href="#spy1">first</a>
+      </li>
+      <li class="second">
+        <a href="#spy2">second</a>
+      </li>
+      <li class="three">
+        <a href="#spy3">three</a>
+      </li>
+      <li class="four">
+        <a href="#spy4">four</a>
+      </li>
+      <li class="five">
+        <a href="#spy5">five</a>
+      </li>
+      <li class="six">
+        <a href="#spy6">six</a>
+      </li>
+    </ul>
+  </div>
+
+  <script src="scrollspy.js"></script>
+</body>
+</html>
